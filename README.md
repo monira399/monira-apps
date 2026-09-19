@@ -55,4 +55,4 @@ A clean and reusable Flutter Expense Tracker UI designed for mobile applications
 
 #### Transaction
 
-![Transaction](tranaction.jpg)
+![Transaction](transaction.jpg)
