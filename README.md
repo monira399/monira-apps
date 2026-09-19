@@ -30,3 +30,29 @@ Monira Apps provides ready-to-use Flutter UI source code and mobile app componen
 ## Contact
 
 For product and business inquiries, please contact Monira Apps through the available contact channels.
+
+## Expense Tracker UI
+
+A clean and reusable Flutter Expense Tracker UI designed for mobile applications.
+
+### Screenshots
+
+#### Login
+
+![Login](login.jpg)
+
+#### Sign Up
+
+![Sign Up](sign-up.jpg)
+
+#### Forgot Password
+
+![Forgot Password](forgot.jpg)
+
+#### Home
+
+![Home](home.jpg)
+
+#### Transaction
+
+![Transaction](tranaction.jpg)
