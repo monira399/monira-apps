@@ -1,137 +1,633 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Monira Apps | Flutter UI Kits & Source Code</title>
+    <title>Monira Apps | Flutter UI Kits & Digital Products</title>
+
+    <meta name="description"
+        content="Monira Apps creates Flutter UI kits, mobile app interfaces, reusable components and digital products for developers.">
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
+
+        * {
+            box-sizing: border-box;
             margin: 0;
-            background: #f7f8fa;
-            color: #222;
+            padding: 0;
         }
 
-        header {
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f8fafc;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* NAVBAR */
+
+        nav {
             background: white;
-            padding: 50px 20px;
-            text-align: center;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        header h1 {
-            font-size: 42px;
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 18px 24px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            font-size: 15px;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.6;
+        }
+
+        /* HERO */
+
+        .hero {
+            background: white;
+            text-align: center;
+            padding: 100px 20px 90px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #64748b;
+            font-size: 19px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 28px;
+            background: #172033;
+            color: white;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        /* GENERAL */
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 80px 24px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
             margin-bottom: 10px;
         }
 
-        header p {
-            font-size: 18px;
-            color: #666;
+        .section-title p {
+            color: #64748b;
         }
 
-        .container {
-            max-width: 1000px;
+        /* ABOUT */
+
+        .about {
+            max-width: 800px;
             margin: auto;
-            padding: 40px 20px;
+            text-align: center;
+            color: #475569;
+            font-size: 17px;
         }
 
-        .product {
+        /* PRODUCTS */
+
+        .product-card {
             background: white;
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 40px;
+            border: 1px solid #e5e7eb;
+            border-radius: 18px;
+            padding: 35px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
         }
 
-        .product h2 {
-            font-size: 30px;
+        .product-card h3 {
+            font-size: 27px;
+            margin-bottom: 12px;
         }
 
-        .product p {
-            color: #555;
-            line-height: 1.7;
+        .status {
+            display: inline-block;
+            background: #f1f5f9;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-bottom: 20px;
         }
+
+        .product-description {
+            color: #64748b;
+            margin-bottom: 25px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 35px;
+        }
+
+        .feature {
+            padding: 12px;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+
+        /* SCREENSHOTS */
 
         .screenshots {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
+            gap: 22px;
             margin-top: 25px;
         }
 
         .screenshots img {
             width: 100%;
-            border-radius: 12px;
+            border-radius: 15px;
+            border: 1px solid #e5e7eb;
+            display: block;
         }
 
-        footer {
-            background: white;
-            text-align: center;
-            padding: 30px;
-            color: #666;
+        /* TECHNOLOGY */
+
+        .technology {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
         }
+
+        .tech {
+            background: white;
+            border: 1px solid #e5e7eb;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+        }
+
+        /* CREATOR */
+
+        .creator {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 18px;
+            padding: 35px;
+            text-align: center;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .creator h3 {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        .creator p {
+            color: #64748b;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #64748b;
+            margin-bottom: 20px;
+        }
+
+        .email {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #172033;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero {
+                padding: 75px 20px;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 60px 20px;
+            }
+        }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <header>
-        <h1>Monira Apps</h1>
 
-        <p>
-            Flutter UI Kits, Mobile App Source Code,
-            and Reusable Flutter Components
-        </p>
-    </header>
+    <!-- NAVIGATION -->
 
+    <nav>
 
-    <div class="container">
+        <div class="nav-container">
 
-        <div class="product">
+            <div class="logo">
+                Monira Apps
+            </div>
 
-            <h2>Expense Tracker UI</h2>
+            <div class="nav-links">
 
-            <p>
-                A clean and reusable Flutter Expense Tracker UI
-                designed for mobile applications.
-            </p>
+                <a href="#about">About</a>
 
-            <p>
-                This UI kit includes authentication screens,
-                dashboard, transaction management and other
-                reusable mobile app interfaces.
-            </p>
+                <a href="#products">Products</a>
 
-            <h3>Screenshots</h3>
+                <a href="#technology">Technology</a>
 
-            <div class="screenshots">
-
-                <img src="login.jpg" alt="Login Screen">
-
-                <img src="sign-up.jpg" alt="Sign Up Screen">
-
-                <img src="forgot.jpg" alt="Forgot Password Screen">
-
-                <img src="home.jpg" alt="Home Screen">
-
-                <img src="transaction.jpg" alt="Transaction Screen">
+                <a href="#contact">Contact</a>
 
             </div>
 
         </div>
 
-    </div>
+    </nav>
 
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>
+            Monira Apps
+        </h1>
+
+        <p>
+            Flutter UI Kits, Mobile App Interfaces,
+            Reusable Components and Digital Products
+            for Developers.
+        </p>
+
+        <a href="#products" class="hero-button">
+            Explore Products
+        </a>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    About Monira Apps
+                </h2>
+
+                <p>
+                    Building practical digital products for modern app development.
+                </p>
+
+            </div>
+
+
+            <div class="about">
+
+                <p>
+                    Monira Apps creates professionally designed Flutter
+                    interfaces, UI kits, reusable components and mobile
+                    application resources for developers.
+                </p>
+
+                <br>
+
+                <p>
+                    Our goal is to help developers save development time
+                    by providing clean, practical and reusable app
+                    interfaces that can be adapted to different projects.
+                </p>
+
+                <br>
+
+                <p>
+                    We focus on mobile application design and development
+                    using Flutter and Dart, with an emphasis on clean,
+                    reusable and developer-friendly solutions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTS -->
+
+    <section id="products">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Products
+                </h2>
+
+                <p>
+                    Explore our current and upcoming digital products.
+                </p>
+
+            </div>
+
+
+            <div class="product-card">
+
+                <span class="status">
+                    Coming Soon
+                </span>
+
+                <h3>
+                    Expense Tracker UI
+                </h3>
+
+                <p class="product-description">
+
+                    A clean and modern Flutter Expense Tracker UI
+                    designed for mobile application projects.
+
+                    The interface focuses on practical layouts,
+                    reusable components and a smooth user experience.
+
+                </p>
+
+
+                <div class="features">
+
+                    <div class="feature">
+                        ✓ Authentication UI
+                    </div>
+
+                    <div class="feature">
+                        ✓ Dashboard UI
+                    </div>
+
+                    <div class="feature">
+                        ✓ Transaction Interface
+                    </div>
+
+                    <div class="feature">
+                        ✓ Clean Mobile Layout
+                    </div>
+
+                    <div class="feature">
+                        ✓ Reusable Components
+                    </div>
+
+                    <div class="feature">
+                        ✓ Flutter & Dart
+                    </div>
+
+                </div>
+
+
+                <h3>
+                    Product Preview
+                </h3>
+
+
+                <div class="screenshots">
+
+                    <img src="login.jpg" alt="Expense Tracker Login Screen">
+
+                    <img src="sign-up.jpg" alt="Expense Tracker Sign Up Screen">
+
+                    <img src="forgot.jpg" alt="Expense Tracker Forgot Password Screen">
+
+                    <img src="home.jpg" alt="Expense Tracker Home Screen">
+
+                    <img src="transaction.jpg" alt="Expense Tracker Transaction Screen">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TECHNOLOGY -->
+
+    <section id="technology">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Technology
+                </h2>
+
+                <p>
+                    Technologies used in our mobile app development work.
+                </p>
+
+            </div>
+
+
+            <div class="technology">
+
+                <div class="tech">
+                    Flutter
+                </div>
+
+                <div class="tech">
+                    Dart
+                </div>
+
+                <div class="tech">
+                    Provider
+                </div>
+
+                <div class="tech">
+                    REST API
+                </div>
+
+                <div class="tech">
+                    Firebase
+                </div>
+
+                <div class="tech">
+                    Responsive UI
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CREATOR -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    About the Creator
+                </h2>
+
+            </div>
+
+
+            <div class="creator">
+
+                <h3>
+                    Monira Pervin
+                </h3>
+
+                <p>
+                    Flutter Developer & Digital Product Creator
+                </p>
+
+                <br>
+
+                <p>
+                    I create Flutter-based mobile application interfaces,
+                    reusable UI components and digital resources for
+                    developers who want practical and modern solutions
+                    for their projects.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Contact
+                </h2>
+
+                <p>
+                    For product and business inquiries, feel free to get in touch.
+                </p>
+
+            </div>
+
+
+            <div class="contact">
+
+                <p class="email">
+                    Email: your-email@example.com
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
 
     <footer>
 
-        <p>© 2026 Monira Apps. All rights reserved.</p>
+        <strong>
+            Monira Apps
+        </strong>
 
         <p>
-            Flutter UI Kits & Mobile App Source Code
+            Flutter UI Kits & Digital Products
+        </p>
+
+        <p>
+            © 2026 Monira Apps. All rights reserved.
         </p>
 
     </footer>
 
+
 </body>
+
 </html>
